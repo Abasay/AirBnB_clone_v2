@@ -19,11 +19,13 @@ def close_session(exception):
     """function to close the session"""
     storage.close()
 
+
 @app.route('/hbnb_filters')
 def hbnb_filters():
     states = storage.all(State)
     amenities = storage.all(Amenity)
-    return render_template('10-hbnb_filters.html', states=states, amenities=amenities)
+    return render_template('10-hbnb_filters.html',
+                           states=states, amenities=amenities)
 
 
 if __name__ == "__main__":
